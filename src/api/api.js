@@ -1,7 +1,7 @@
 import axios from 'axios'
 
 const api = axios.create({
-  baseURL: 'https://eduplatform-j4j9.onrender.com',
+  baseURL: 'https://eduplatform2.onrender.com',
   withCredentials: true,
   headers: {
     'Content-Type': 'application/json'
