@@ -11,7 +11,7 @@ export default function ManageCourse() {
 
   // ✅ Fetch course with sections & subsections
   useEffect(() => {
-   fetch(`http://localhost:5000/api/v1/user/coursedetails/${courseId}`, { credentials: "include" })
+   fetch(`http://eduplatform2.onrender.com/api/v1/user/coursedetails/${courseId}`, { credentials: "include" })
       .then((res) => res.json())
       .then((data) => {
         if (data.success) setCourse(data.data)
@@ -22,7 +22,7 @@ export default function ManageCourse() {
   // ✅ Create new Section
   const handleAddSection = async () => {
     if (!newSection.trim()) return
-    const res = await fetch("http://localhost:5000/api/v1/user/createsection", {
+    const res = await fetch("http://eduplatform2.onrender.com/api/v1/user/createsection", {
       method: "POST",
       credentials: "include",
       headers: { "Content-Type": "application/json" },
@@ -37,7 +37,7 @@ export default function ManageCourse() {
 
   // ✅ Delete Section
   const handleDeleteSection = async (sectionId: string) => {
-    const res = await fetch("http://localhost:5000/api/v1/user/deletesection", {
+    const res = await fetch("http://eduplatform2.onrender.com/api/v1/user/deletesection", {
       method: "DELETE",
       credentials: "include",
       headers: { "Content-Type": "application/json" },
@@ -57,7 +57,7 @@ export default function ManageCourse() {
     formData.append("sectionId", sectionId)
     formData.append("videoFile", newSub.videoFile)
 
-    const res = await fetch("http://localhost:5000/api/v1/user/createsubsection", {
+    const res = await fetch("http://eduplatform2.onrender.com/api/v1/user/createsubsection", {
       method: "POST",
       credentials: "include",
       body: formData,

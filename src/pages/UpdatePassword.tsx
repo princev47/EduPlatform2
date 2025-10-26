@@ -25,7 +25,7 @@ export default function UpdatePassword() {
 
     try {
       setLoading(true)
-      const res = await axios.post("http://localhost:5000/api/v1/auth/update-password", {
+      const res = await axios.post("http://eduplatform2.onrender.com/api/v1/auth/update-password", {
         token,
         password,
       })

@@ -24,7 +24,7 @@ export default function CourseDetails() {
     try {
       // 1. Call backend to create Razorpay order (✅ withCredentials added)
       const { data } = await axios.post(
-        "http://localhost:5000/api/v1/user/payment/capture-payment",
+        "http://eduplatform2.onrender.com/api/v1/user/payment/capture-payment",
         { courseId: course._id },
         { withCredentials: true } // send JWT cookie
       );
@@ -49,7 +49,7 @@ export default function CourseDetails() {
           try {
             // 3. Send details to backend for verification (✅ withCredentials added)
             const verifyRes = await axios.post(
-              "http://localhost:5000/api/v1/user/payment/verify-signature",
+              "http://eduplatform2.onrender.com/api/v1/user/payment/verify-signature",
               {
                 razorpay_order_id: response.razorpay_order_id,
                 razorpay_payment_id: response.razorpay_payment_id,

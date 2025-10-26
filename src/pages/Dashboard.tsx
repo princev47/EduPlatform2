@@ -29,7 +29,7 @@ export default function Dashboard() {
   useEffect(() => {
     if (isInstructor) {
       // Fetch instructor data
-      fetch("http://localhost:5000/api/v1/user/instructor-courses", {
+      fetch("http://eduplatform2.onrender.com/api/v1/user/instructor-courses", {
         method: "GET",
         credentials: "include",
       })
@@ -45,7 +45,7 @@ export default function Dashboard() {
         .finally(() => setLoading(false))
     } else {
       // Fetch student data
-      fetch("http://localhost:5000/api/v1/user/student-dashboard", {
+      fetch("http://eduplatform2.onrender.com/api/v1/user/student-dashboard", {
         method: "GET",
         credentials: "include",
       })
