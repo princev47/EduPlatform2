@@ -53,13 +53,13 @@ export const AuthProvider = ({ children }: AuthProviderProps) => {
   }, [])
 
   const login = async (email: string, password: string) => {
-    const res = await api.post('/login', { email, password })
+    const res = await api.post('/api/v1/user/login', { email, password })
     if (res.data?.token) localStorage.setItem('token', res.data.token)
     setUser(res.data?.Cuser || res.data?.user || res.data)
     return res
   }
 
-  const signup = async (payload: any) => api.post('/signup', payload)
+  const signup = async (payload: any) => api.post('/api/v1/user/signup', payload)
 
   const logout = () => {
     localStorage.removeItem('token')

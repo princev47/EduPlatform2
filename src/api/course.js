@@ -6,7 +6,7 @@ export const createCourse = (formData) =>
   })
 
 // backend doesn’t have /course/getall → mapped to /allsections
-export const getAllCourses = () => api.get('/showAllCourses')
+export const getAllCourses = () => api.get('/api/v1/user/showAllCourses')
 
 // ✅ Correct: use path param, not query
 export const getCourseDetails = (courseId) =>

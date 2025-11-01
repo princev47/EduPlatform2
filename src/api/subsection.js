@@ -5,5 +5,5 @@ export const createSubSection = (formData) => api.post('/createsubsection', form
 })
 
 // Backend doesn’t have update/delete → keep but stub them
-export const updateSubSection = (payload) => api.put('/subsection/update', payload)
-export const deleteSubSection = (payload) => api.delete('/subsection/delete', { data: payload })
+export const updateSubSection = (payload) => api.put('/api/v1/user/subsection/update', payload)
+export const deleteSubSection = (payload) => api.delete('/api/v1/user/subsection/delete', { data: payload })
