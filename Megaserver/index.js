@@ -19,7 +19,7 @@ const app = express();
     app.use(express.json());
     app.use(cookieParser());
     app.use(cors({  
-        origin: "https://eduplatform7.netlify.app" ,
+        origin: 'https://poetic-griffin-a0dff9.netlify.app' ,
         methods:["GET","POST","PUT","DELETE"],
         credentials:true,  //agar frontend se cookie bhejni hai toh yeh true krna padega
     }))
