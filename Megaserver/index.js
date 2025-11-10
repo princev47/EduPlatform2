@@ -17,9 +17,10 @@ const PORT = process.env.PORT || 5000;
 
 app.use(
   cors({
-    origin: "https://eduplatform0.netlify.app", // ✅ Allow all origins
+    origin: "https://eduplatform0.netlify.app", // ✅ your frontend URL
     methods: ["GET", "POST", "PUT", "DELETE", "OPTIONS"],
-    allowedHeaders: ["Content-Type", "Authorization"], // optional but recommended
+    credentials: true, // ✅ allow cookies, tokens, etc.
+    allowedHeaders: ["Content-Type", "Authorization"],
     optionsSuccessStatus: 200,
   })
 );
