@@ -13,8 +13,7 @@ dotenv.config();
 const app = express();
 const PORT = process.env.PORT || 5000;
 
-// ✅ CORS middleware — put this BEFORE routes and before anything else that handles requests
-import cors from "cors";
+
 
 app.use(
   cors({
