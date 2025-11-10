@@ -16,7 +16,7 @@ const PORT = process.env.PORT || 5000;
 // ✅ Allowed frontend origins (Netlify + localhost)
 const allowedOrigins = [
   "https://eduplatform0.netlify.app",
-  "http://localhost:3000", // for local dev
+  "http://localhost:5173", // for local dev
 ];
 
 // ✅ CORS setup
