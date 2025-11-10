@@ -13,25 +13,37 @@ dotenv.config();
 const app = express();
 const PORT = process.env.PORT || 5000;
 
+// ✅ Allowed frontend origins (Netlify + localhost)
+const allowedOrigins = [
+  "https://eduplatform0.netlify.app",
+  "http://localhost:3000", // for local dev
+];
 
-
+// ✅ CORS setup
 app.use(
   cors({
-    origin: "https://eduplatform0.netlify.app", // ✅ your frontend URL
+    origin: function (origin, callback) {
+      if (!origin || allowedOrigins.includes(origin)) {
+        callback(null, true);
+      } else {
+        callback(new Error("Not allowed by CORS"));
+      }
+    },
     methods: ["GET", "POST", "PUT", "DELETE", "OPTIONS"],
-    credentials: true, // ✅ allow cookies, tokens, etc.
+    credentials: true,
     allowedHeaders: ["Content-Type", "Authorization"],
     optionsSuccessStatus: 200,
   })
 );
 
-
 app.use(express.json());
 app.use(cookieParser());
-app.use(fileUpload({
-  useTempFiles: true,
-  tempFileDir: "/tmp/",
-}));
+app.use(
+  fileUpload({
+    useTempFiles: true,
+    tempFileDir: "/tmp/",
+  })
+);
 
 // ✅ Initialize connections
 connectCloud();
