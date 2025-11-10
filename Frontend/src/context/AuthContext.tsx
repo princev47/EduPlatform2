@@ -36,21 +36,21 @@ export const AuthProvider = ({ children }: AuthProviderProps) => {
   const [loading, setLoading] = useState(true)
   const navigate = useNavigate()
 
-  useEffect(() => {
-    const token = localStorage.getItem('token')
-    if (!token) { 
-      setLoading(false)
-      return 
-    }
+ useEffect(() => {
+  const token = localStorage.getItem('token')
+  if (!token) { 
+    setLoading(false)
+    return 
+  }
 
-    api.get('/get')
-      .then(res => setUser(res.data.data || res.data))
-      .catch(() => { 
-        localStorage.removeItem('token')
-        setUser(null) 
-      })
-      .finally(() => setLoading(false))
-  }, [])
+  api.get('/api/v1/user/get') // ✅ Fixed route
+    .then(res => setUser(res.data.data || res.data))
+    .catch(() => { 
+      localStorage.removeItem('token')
+      setUser(null) 
+    })
+    .finally(() => setLoading(false))
+}, [])
 
   const login = async (email: string, password: string) => {
     const res = await api.post('/api/v1/user/login', { email, password })
