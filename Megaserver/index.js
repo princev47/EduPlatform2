@@ -14,12 +14,17 @@ const app = express();
 const PORT = process.env.PORT || 5000;
 
 // ✅ CORS middleware — put this BEFORE routes and before anything else that handles requests
-app.use(cors({
-  origin: ["https://poetic-griffin-a0dff9.netlify.app"],
-  methods: ["GET", "POST", "PUT", "DELETE", "OPTIONS"],
-  credentials: true,
-  optionsSuccessStatus: 200, // Fix for some browsers (esp. Chrome)
-}));
+import cors from "cors";
+
+app.use(
+  cors({
+    origin: "*", // ✅ Allow all origins
+    methods: ["GET", "POST", "PUT", "DELETE", "OPTIONS"],
+    allowedHeaders: ["Content-Type", "Authorization"], // optional but recommended
+    optionsSuccessStatus: 200,
+  })
+);
+
 
 app.use(express.json());
 app.use(cookieParser());
