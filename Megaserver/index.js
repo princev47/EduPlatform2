@@ -17,7 +17,7 @@ const PORT = process.env.PORT || 5000;
 
 app.use(
   cors({
-    origin: "*", // ✅ Allow all origins
+    origin: "https://eduplatform0.netlify.app", // ✅ Allow all origins
     methods: ["GET", "POST", "PUT", "DELETE", "OPTIONS"],
     allowedHeaders: ["Content-Type", "Authorization"], // optional but recommended
     optionsSuccessStatus: 200,
