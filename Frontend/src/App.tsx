@@ -28,7 +28,7 @@ export default function App() {
         <Route path="/login" element={<Login />} />
         <Route path="/signup" element={<Signup />} />
         <Route path="/courses" element={<Courses />} />
-        <Route path="/course/:id" element={<CourseDetails />} />
+       
         <Route path="/request-reset" element={<RequestReset />} />
         <Route path="/update-password/:token" element={<ResetPassword />} />
         <Route path="/instructor/manage-course/:courseId" element={<ManageCourse />} />

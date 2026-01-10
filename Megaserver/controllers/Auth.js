@@ -97,7 +97,7 @@ const sendOtp = async (req,res)=>{
         })
       }
       // match otp 
-      const tempotp =await Otp.findOne({email}).sort({ createdAt: -1 }).limit(1);
+      const tempotp = await Otp.findOne({email}).sort({ createdAt: -1 }).limit(1);
 
       if(tempotp==null){
         return res.status(400).json({
@@ -114,7 +114,7 @@ const sendOtp = async (req,res)=>{
 
       // as the otp match hash password
 
-      let hashedpass =await bcrypt.hash(password,10)
+      let hashedpass = await bcrypt.hash(password,10)
       const profileDetails = await Profile.create({
         gender:null,
         dateOfBirth:null,
@@ -150,7 +150,7 @@ export{signup}
      //signup check has been done working fine and sendotp also working fine.............../
 
 
-  // lets write the login route
+  
 
     const login = async(req,res)=>{
       try {

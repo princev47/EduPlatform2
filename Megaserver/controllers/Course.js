@@ -65,15 +65,14 @@ import RatingAndReview from "../models/RatingAndReview.js";
     },
         {new:true});
 
-        // update the tag schema
-     // await tags.findByIdAndUpdate({_id:tagDetails._id},{$push:{course:newCourse._id}},{new:true})
+
 
       return res.status(200).json({
   success: true,
   message: "Course created successfully",
-  courseId: newCourse._id,   // ✅ easy to grab
-  course: newCourse,         // optional, full course details
-  //instructor: User           // optional, updated instructor
+  courseId: newCourse._id,   
+  course: newCourse,        
+ 
 })
 
     } catch (error) {
