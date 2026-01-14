@@ -26,5 +26,5 @@ export const markVideoCompleted = async (req, res) => {
   } catch (err) {
     console.error(err)
     res.status(500).json({ success: false, message: "Error updating progress" })
-  }
+  };
 }

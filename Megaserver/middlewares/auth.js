@@ -43,7 +43,7 @@ const auth = async(req,res,next)=>{
 
 //isStudent
 
-  const isStudent = async(req,res,next)=>{
+  const isStudent = async(req,res,next) =>{
      try {
         if(req.user.accountType!=="Student"){
             return res.status(401).json({
@@ -107,3 +107,4 @@ export{isInstructor}
   }
   
   export{isAdmin}
+  //done

@@ -5,7 +5,8 @@ import otpGenerator from 'otp-generator'
 import Profile from "../models/Profile.js";
 import jwt from 'jsonwebtoken'
 import mailSender from "../utils/mailSender.js";
-import dotenv from 'dotenv'   
+import dotenv from 'dotenv' 
+import mongoose from "mongoose";  
 dotenv.config();
 
 const sendOtp = async (req,res)=>{
