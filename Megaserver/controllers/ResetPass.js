@@ -32,7 +32,7 @@ const resetPasswordToken = async(req,res)=>{
         {new:true}
     )
     //create url
-     const url = `http://localhost:5173/update-password/${token}`
+     const url = `${process.env.FRONTEND_URL}/update-password/${token}`;
     // send mail containing the url
     await mailSender(email, "Password Reset Link",`Password reset link ${url}`)
     //link to reset passwrord
